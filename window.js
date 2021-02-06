@@ -14,4 +14,5 @@ function findScope(x, y) {
   return doMath;
 }
 
+// console.log("outside function scope", doMath); // can not access > error
 console.log(findScope(2, 2));
