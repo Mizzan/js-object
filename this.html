@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>'This' Keyword</title>
+  </head>
+  <body>
+    <h1 style="text-align: center">
+      <mark>'this'</mark> Keyword refers to the object it is inside or object on
+      leftside of the dot
+    </h1>
+    <h1 style="text-align: center">
+      If there is nothing on the leftside then <mark>'this'</mark> keyword
+      refers to the <mark>'window'</mark> object
+    </h1>
+
+    <p onclick="this.innerText = 'you clicked'">Do not clicked</p>
+
+    <script>
+      const playerOne = {
+        name: "Lionel Messi",
+        getfullName() {
+          return `Player One's full name is ${this.name}`;
+        },
+      };
+
+      //   console.log(playerOne.getfullName()); // here 'this' keyword refers to the Lionel Messi
+      const playerTwo = {
+        name: "Luis Suarez",
+      };
+
+      playerTwo.getfullName = playerOne.getfullName;
+      //   console.log(playerTwo.getfullName()); // here 'this' keyword refers to the luis suarez
+
+      function add(x, y) {
+        console.log(this); // 'this' referring to the 'window' object
+        return x + y;
+      }
+
+      console.log(add(2, 3));
+    </script>
+  </body>
+</html>
