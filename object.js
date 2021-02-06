@@ -25,12 +25,20 @@ const newUserTwoInfo = {
   monthlySalary: 14000,
 };
 
+/*-------------- .bind() -------------------*/
+
 // we need to assign the function and create an instance of that function for doing so using .bind
 // const newUserPayBill = userInfo.rentPays.bind(newUserOneInfo);
 // console.log(newUserPayBill(1500));
 
+/*-------------- .call() -------------------*/
 // .call and .apply both works pretty same whereas
 // .call starts with c and c stats with comma, arguments passed in with comma in call
 // but with .call we can directly use that function without creating an instance
-userInfo.buysFood.call(newUserTwoInfo, 3000, 50, 100);
-console.log(newUserTwoInfo.monthlySalary);
+// userInfo.buysFood.call(newUserTwoInfo, 3000, 50, 100);
+// console.log(newUserTwoInfo.monthlySalary);
+
+/*-------------- .apply() -------------------*/
+// .apply starts with a and a starts with array, arguments passed in array inside .apply
+userInfo.buysFood.apply(newUserOneInfo, [2000, 300, 30]);
+console.log(newUserOneInfo.monthlySalary);
